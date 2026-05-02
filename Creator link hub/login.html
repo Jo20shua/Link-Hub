@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log in | Creator Link Hub</title>
+    <link rel="stylesheet" href="login_styles.css">
+    <script src="login.js" defer></script>
+</head>
+
+<body>
+       <nav class="navbar">
+           <a href="Homepage.html">
+             <img src="Hub Logo 2.png" class="logo" alt="Logo">
+           </a>
+       </nav>
+
+       <div class="container">
+
+    <h1>Welcome back</h1>
+    <p class="subtitle">Log in to your account</p>
+
+    <form action="/login" method="POST">
+        <input type="email" id="username" name="username" placeholder="Email or Username" required><br><br>
+
+        <button type="button" id="continueBtn" disabled onclick="goToOTP(document.getElementById('username').value, 'login')">Continue</button>
+    </form>
+
+    <!-- Divider -->
+    <div class="divider">
+      <span>OR</span>
+    </div>
+
+     <!-- Social Buttons -->
+    <button class="social-btn">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg" alt="">
+      Continue with Google
+    </button>
+
+    <button class="social-btn">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="">
+      Continue with Apple
+    </button>
+
+
+    <p class="signup_link">
+        Don't have an account? <a href="sign_up.html">Sign Up</a></p>
+    </div>
+</body>
+</html>
