@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add New Link | Creator Link Hub</title>
+    <link rel="stylesheet" href="addlink_style.css">
+    <script src="addlink.js" defer></script>
+</head>
+
+<body>
+    <h1>Add New Link</h1>
+
+    <form action="/submit-link" method="POST">
+        <label for="link-name">Link Name:</label>
+        <input type="text" id="link-name" name="link-name" required><br><br>
+
+        <label for="link-url">Link URL:</label>
+        <input type="url" id="link-url" name="link-url" required><br><br>
+
+        <button type="submit">Add Link</button>
+    </form>
+    
+</body>
+</html>

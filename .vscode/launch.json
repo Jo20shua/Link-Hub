@@ -1,0 +1,11 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Launch HTML in Chrome",
+      "type": "pwa-chrome",
+      "request": "launch",
+      "file": "${workspaceFolder}/Homepage.html"
+    }
+  ]
+}
