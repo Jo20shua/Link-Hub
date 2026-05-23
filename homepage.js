@@ -32,3 +32,11 @@ toggle.addEventListener("click", () => {
     toggle.classList.toggle("active");
     navLinks.classList.toggle("active");
 });
+
+const menuToggle = document.getElementById("menu-toggle");
+const siteNav = document.querySelector(".site-nav");
+
+menuToggle.addEventListener("click", () => {
+  menuToggle.classList.toggle("active");
+  siteNav.classList.toggle("active");
+});
