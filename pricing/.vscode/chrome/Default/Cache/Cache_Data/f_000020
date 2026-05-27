@@ -1,0 +1,183 @@
+import { createHotContext as __vite__createHotContext } from "/@vite/client";import.meta.hot = __vite__createHotContext("/src/App.tsx");import __vite__cjsImport0_react_jsxDevRuntime from "/node_modules/.vite/deps/react_jsx-dev-runtime.js?v=21f0297f"; const jsxDEV = __vite__cjsImport0_react_jsxDevRuntime["jsxDEV"];
+import * as RefreshRuntime from "/@react-refresh";
+const inWebWorker = typeof WorkerGlobalScope !== "undefined" && self instanceof WorkerGlobalScope;
+let prevRefreshReg;
+let prevRefreshSig;
+if (import.meta.hot && !inWebWorker) {
+  if (!window.$RefreshReg$) {
+    throw new Error(
+      "@vitejs/plugin-react can't detect preamble. Something is wrong."
+    );
+  }
+  prevRefreshReg = window.$RefreshReg$;
+  prevRefreshSig = window.$RefreshSig$;
+  window.$RefreshReg$ = RefreshRuntime.getRefreshReg("C:/Users/joshu/.vscode/pricing/src/App.tsx");
+  window.$RefreshSig$ = RefreshRuntime.createSignatureFunctionForTransform;
+}
+import { Sparkles } from "/node_modules/.vite/deps/lucide-react.js?v=723aa1a9";
+import { PricingCard } from "/src/components/PricingCard.tsx";
+import { freePlan, planCards } from "/src/data/pricing.ts?t=1779727018023";
+function App() {
+  return /* @__PURE__ */ jsxDEV("div", { className: "min-h-screen overflow-hidden bg-[radial-gradient(circle_at_top,_rgba(123,47,247,0.18),_transparent_32%),linear-gradient(180deg,#020617_0%,#0f172a_100%)] text-slate-100", children: /* @__PURE__ */ jsxDEV("div", { className: "mx-auto flex max-w-7xl flex-col px-6 py-8 sm:px-8 lg:px-10", children: [
+    /* @__PURE__ */ jsxDEV("div", { className: "mb-3 flex items-center justify-start", children: /* @__PURE__ */ jsxDEV("img", { src: "/logo.png", alt: "Logo", className: "h-20 w-auto" }, void 0, false, {
+      fileName: "C:/Users/joshu/.vscode/pricing/src/App.tsx",
+      lineNumber: 29,
+      columnNumber: 11
+    }, this) }, void 0, false, {
+      fileName: "C:/Users/joshu/.vscode/pricing/src/App.tsx",
+      lineNumber: 28,
+      columnNumber: 9
+    }, this),
+    /* @__PURE__ */ jsxDEV("section", { className: "fade-in-stagger mb-8 space-y-3 text-center md:mb-10", children: /* @__PURE__ */ jsxDEV("div", { className: "mx-auto max-w-3xl rounded-[2rem] border border-white/10 bg-slate-950/85 px-7 py-7 shadow-soft backdrop-blur-xl sm:px-10", children: [
+      /* @__PURE__ */ jsxDEV("p", { className: "inline-flex items-center gap-2 rounded-full bg-violet-500/10 px-4 py-2 text-xs uppercase tracking-[0.3em] text-violet-200", children: [
+        /* @__PURE__ */ jsxDEV(Sparkles, { className: "h-4 w-4 text-violet-300" }, void 0, false, {
+          fileName: "C:/Users/joshu/.vscode/pricing/src/App.tsx",
+          lineNumber: 35,
+          columnNumber: 15
+        }, this),
+        "Most flexible pricing"
+      ] }, void 0, true, {
+        fileName: "C:/Users/joshu/.vscode/pricing/src/App.tsx",
+        lineNumber: 34,
+        columnNumber: 13
+      }, this),
+      /* @__PURE__ */ jsxDEV("h1", { className: "mt-6 text-4xl font-semibold tracking-tight text-white sm:text-5xl", children: "Find the plan for you" }, void 0, false, {
+        fileName: "C:/Users/joshu/.vscode/pricing/src/App.tsx",
+        lineNumber: 38,
+        columnNumber: 13
+      }, this),
+      /* @__PURE__ */ jsxDEV("p", { className: "mx-auto mt-4 max-w-xl text-sm leading-7 text-slate-300 sm:text-base", children: "You can cancel at any time." }, void 0, false, {
+        fileName: "C:/Users/joshu/.vscode/pricing/src/App.tsx",
+        lineNumber: 41,
+        columnNumber: 13
+      }, this)
+    ] }, void 0, true, {
+      fileName: "C:/Users/joshu/.vscode/pricing/src/App.tsx",
+      lineNumber: 33,
+      columnNumber: 11
+    }, this) }, void 0, false, {
+      fileName: "C:/Users/joshu/.vscode/pricing/src/App.tsx",
+      lineNumber: 32,
+      columnNumber: 9
+    }, this),
+    /* @__PURE__ */ jsxDEV("section", { className: "grid gap-6 xl:grid-cols-4 xl:gap-8", children: planCards.map(
+      (plan) => /* @__PURE__ */ jsxDEV(
+        PricingCard,
+        {
+          title: plan.title,
+          priceLabel: plan.priceLabel,
+          description: plan.description,
+          features: plan.features,
+          ctaLabel: plan.ctaLabel,
+          accent: plan.accent,
+          featured: plan.featured,
+          badge: plan.badge,
+          className: plan.featured ? "xl:col-span-2" : "",
+          extraContent: plan.title === "Premium Plan" ? /* @__PURE__ */ jsxDEV("div", { className: "mt-6 rounded-3xl border border-violet-500/20 bg-slate-950/80 p-4 text-sm text-slate-200", children: [
+            /* @__PURE__ */ jsxDEV("p", { className: "font-semibold text-slate-100", children: "Premium bonus" }, void 0, false, {
+              fileName: "C:/Users/joshu/.vscode/pricing/src/App.tsx",
+              lineNumber: 63,
+              columnNumber: 21
+            }, this),
+            /* @__PURE__ */ jsxDEV("p", { className: "mt-2 text-slate-400", children: "Extended onboarding, advanced funnels, and a dedicated account review to keep your profile polished." }, void 0, false, {
+              fileName: "C:/Users/joshu/.vscode/pricing/src/App.tsx",
+              lineNumber: 64,
+              columnNumber: 21
+            }, this)
+          ] }, void 0, true, {
+            fileName: "C:/Users/joshu/.vscode/pricing/src/App.tsx",
+            lineNumber: 62,
+            columnNumber: 13
+          }, this) : null
+        },
+        plan.title,
+        false,
+        {
+          fileName: "C:/Users/joshu/.vscode/pricing/src/App.tsx",
+          lineNumber: 49,
+          columnNumber: 11
+        },
+        this
+      )
+    ) }, void 0, false, {
+      fileName: "C:/Users/joshu/.vscode/pricing/src/App.tsx",
+      lineNumber: 47,
+      columnNumber: 9
+    }, this),
+    /* @__PURE__ */ jsxDEV("section", { className: "mt-10 rounded-[2rem] border border-white/10 bg-slate-950/85 p-6 shadow-soft backdrop-blur-xl md:p-8", children: /* @__PURE__ */ jsxDEV("div", { className: "flex flex-col gap-6 md:flex-row md:items-center md:justify-between", children: [
+      /* @__PURE__ */ jsxDEV("div", { className: "space-y-3", children: [
+        /* @__PURE__ */ jsxDEV("p", { className: "text-sm font-semibold uppercase tracking-[0.24em] text-violet-300/80", children: "Free Plan" }, void 0, false, {
+          fileName: "C:/Users/joshu/.vscode/pricing/src/App.tsx",
+          lineNumber: 75,
+          columnNumber: 15
+        }, this),
+        /* @__PURE__ */ jsxDEV("h2", { className: "text-3xl font-semibold tracking-tight text-white sm:text-4xl", children: "No commitment, just the essentials." }, void 0, false, {
+          fileName: "C:/Users/joshu/.vscode/pricing/src/App.tsx",
+          lineNumber: 76,
+          columnNumber: 15
+        }, this),
+        /* @__PURE__ */ jsxDEV("p", { className: "max-w-2xl text-sm leading-7 text-slate-400", children: "Perfect for testing the experience before upgrading or sharing a simple landing page with your audience." }, void 0, false, {
+          fileName: "C:/Users/joshu/.vscode/pricing/src/App.tsx",
+          lineNumber: 77,
+          columnNumber: 15
+        }, this)
+      ] }, void 0, true, {
+        fileName: "C:/Users/joshu/.vscode/pricing/src/App.tsx",
+        lineNumber: 74,
+        columnNumber: 13
+      }, this),
+      /* @__PURE__ */ jsxDEV("div", { className: "flex flex-col gap-3 sm:flex-row sm:items-center", children: [
+        /* @__PURE__ */ jsxDEV("button", { className: "inline-flex items-center justify-center rounded-2xl bg-white/10 px-6 py-3 text-sm font-semibold text-slate-100 transition duration-300 hover:bg-white/20 md:sticky md:bottom-6 md:z-20", children: freePlan.ctaLabel }, void 0, false, {
+          fileName: "C:/Users/joshu/.vscode/pricing/src/App.tsx",
+          lineNumber: 83,
+          columnNumber: 15
+        }, this),
+        /* @__PURE__ */ jsxDEV("p", { className: "text-sm text-slate-500", children: "Access analytics, custom colors, and full support when you upgrade." }, void 0, false, {
+          fileName: "C:/Users/joshu/.vscode/pricing/src/App.tsx",
+          lineNumber: 86,
+          columnNumber: 15
+        }, this)
+      ] }, void 0, true, {
+        fileName: "C:/Users/joshu/.vscode/pricing/src/App.tsx",
+        lineNumber: 82,
+        columnNumber: 13
+      }, this)
+    ] }, void 0, true, {
+      fileName: "C:/Users/joshu/.vscode/pricing/src/App.tsx",
+      lineNumber: 73,
+      columnNumber: 11
+    }, this) }, void 0, false, {
+      fileName: "C:/Users/joshu/.vscode/pricing/src/App.tsx",
+      lineNumber: 72,
+      columnNumber: 9
+    }, this)
+  ] }, void 0, true, {
+    fileName: "C:/Users/joshu/.vscode/pricing/src/App.tsx",
+    lineNumber: 27,
+    columnNumber: 7
+  }, this) }, void 0, false, {
+    fileName: "C:/Users/joshu/.vscode/pricing/src/App.tsx",
+    lineNumber: 26,
+    columnNumber: 5
+  }, this);
+}
+_c = App;
+export default App;
+var _c;
+$RefreshReg$(_c, "App");
+if (import.meta.hot && !inWebWorker) {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+if (import.meta.hot && !inWebWorker) {
+  RefreshRuntime.__hmr_import(import.meta.url).then((currentExports) => {
+    RefreshRuntime.registerExportsForReactRefresh("C:/Users/joshu/.vscode/pricing/src/App.tsx", currentExports);
+    import.meta.hot.accept((nextExports) => {
+      if (!nextExports) return;
+      const invalidateMessage = RefreshRuntime.validateRefreshBoundaryAndEnqueueUpdate("C:/Users/joshu/.vscode/pricing/src/App.tsx", currentExports, nextExports);
+      if (invalidateMessage) import.meta.hot.invalidate(invalidateMessage);
+    });
+  });
+}
+
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJtYXBwaW5ncyI6IkFBU1U7Ozs7Ozs7Ozs7Ozs7Ozs7QUFUVixTQUFTQSxnQkFBZ0I7QUFDekIsU0FBU0MsbUJBQW1CO0FBQzVCLFNBQVNDLFVBQVVDLGlCQUFpQjtBQUVwQyxTQUFTQyxNQUFNO0FBQ2IsU0FDRSx1QkFBQyxTQUFJLFdBQVUsMktBQ2IsaUNBQUMsU0FBSSxXQUFVLDhEQUNiO0FBQUEsMkJBQUMsU0FBSSxXQUFVLHdDQUNiLGlDQUFDLFNBQUksS0FBSSxhQUFZLEtBQUksUUFBTyxXQUFVLGlCQUExQztBQUFBO0FBQUE7QUFBQTtBQUFBLFdBQXVELEtBRHpEO0FBQUE7QUFBQTtBQUFBO0FBQUEsV0FFQTtBQUFBLElBRUEsdUJBQUMsYUFBUSxXQUFVLHVEQUNqQixpQ0FBQyxTQUFJLFdBQVUsMkhBQ2I7QUFBQSw2QkFBQyxPQUFFLFdBQVUsNkhBQ1g7QUFBQSwrQkFBQyxZQUFTLFdBQVUsNkJBQXBCO0FBQUE7QUFBQTtBQUFBO0FBQUEsZUFBNkM7QUFBQSxRQUFHO0FBQUEsV0FEbEQ7QUFBQTtBQUFBO0FBQUE7QUFBQSxhQUdBO0FBQUEsTUFDQSx1QkFBQyxRQUFHLFdBQVUscUVBQW9FLHFDQUFsRjtBQUFBO0FBQUE7QUFBQTtBQUFBLGFBRUE7QUFBQSxNQUNBLHVCQUFDLE9BQUUsV0FBVSx1RUFBc0UsMkNBQW5GO0FBQUE7QUFBQTtBQUFBO0FBQUEsYUFFQTtBQUFBLFNBVkY7QUFBQTtBQUFBO0FBQUE7QUFBQSxXQVdBLEtBWkY7QUFBQTtBQUFBO0FBQUE7QUFBQSxXQWFBO0FBQUEsSUFFQSx1QkFBQyxhQUFRLFdBQVUsc0NBQ2hCRCxvQkFBVUU7QUFBQUEsTUFBSSxDQUFDQyxTQUNkO0FBQUEsUUFBQztBQUFBO0FBQUEsVUFFQyxPQUFPQSxLQUFLQztBQUFBQSxVQUNaLFlBQVlELEtBQUtFO0FBQUFBLFVBQ2pCLGFBQWFGLEtBQUtHO0FBQUFBLFVBQ2xCLFVBQVVILEtBQUtJO0FBQUFBLFVBQ2YsVUFBVUosS0FBS0s7QUFBQUEsVUFDZixRQUFRTCxLQUFLTTtBQUFBQSxVQUNiLFVBQVVOLEtBQUtPO0FBQUFBLFVBQ2YsT0FBT1AsS0FBS1E7QUFBQUEsVUFDWixXQUFXUixLQUFLTyxXQUFXLGtCQUFrQjtBQUFBLFVBQzdDLGNBQ0VQLEtBQUtDLFVBQVUsaUJBQ2IsdUJBQUMsU0FBSSxXQUFVLDJGQUNiO0FBQUEsbUNBQUMsT0FBRSxXQUFVLGdDQUErQiw2QkFBNUM7QUFBQTtBQUFBO0FBQUE7QUFBQSxtQkFBeUQ7QUFBQSxZQUN6RCx1QkFBQyxPQUFFLFdBQVUsdUJBQXNCLG9IQUFuQztBQUFBO0FBQUE7QUFBQTtBQUFBLG1CQUF1STtBQUFBLGVBRnpJO0FBQUE7QUFBQTtBQUFBO0FBQUEsaUJBR0EsSUFDRTtBQUFBO0FBQUEsUUFoQkRELEtBQUtDO0FBQUFBLFFBRFo7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQSxNQWtCRztBQUFBLElBRUosS0F0Qkg7QUFBQTtBQUFBO0FBQUE7QUFBQSxXQXVCQTtBQUFBLElBRUEsdUJBQUMsYUFBUSxXQUFVLHVHQUNqQixpQ0FBQyxTQUFJLFdBQVUsc0VBQ2I7QUFBQSw2QkFBQyxTQUFJLFdBQVUsYUFDYjtBQUFBLCtCQUFDLE9BQUUsV0FBVSx3RUFBdUUseUJBQXBGO0FBQUE7QUFBQTtBQUFBO0FBQUEsZUFBNkY7QUFBQSxRQUM3Rix1QkFBQyxRQUFHLFdBQVUsZ0VBQStELG1EQUE3RTtBQUFBO0FBQUE7QUFBQTtBQUFBLGVBQWdIO0FBQUEsUUFDaEgsdUJBQUMsT0FBRSxXQUFVLDhDQUE2Qyx3SEFBMUQ7QUFBQTtBQUFBO0FBQUE7QUFBQSxlQUVBO0FBQUEsV0FMRjtBQUFBO0FBQUE7QUFBQTtBQUFBLGFBTUE7QUFBQSxNQUVBLHVCQUFDLFNBQUksV0FBVSxtREFDYjtBQUFBLCtCQUFDLFlBQU8sV0FBVSwwTEFDZkwsbUJBQVNTLFlBRFo7QUFBQTtBQUFBO0FBQUE7QUFBQSxlQUVBO0FBQUEsUUFDQSx1QkFBQyxPQUFFLFdBQVUsMEJBQXlCLG1GQUF0QztBQUFBO0FBQUE7QUFBQTtBQUFBLGVBQXlHO0FBQUEsV0FKM0c7QUFBQTtBQUFBO0FBQUE7QUFBQSxhQUtBO0FBQUEsU0FkRjtBQUFBO0FBQUE7QUFBQTtBQUFBLFdBZUEsS0FoQkY7QUFBQTtBQUFBO0FBQUE7QUFBQSxXQWlCQTtBQUFBLE9BOURGO0FBQUE7QUFBQTtBQUFBO0FBQUEsU0ErREEsS0FoRUY7QUFBQTtBQUFBO0FBQUE7QUFBQSxTQWlFQTtBQUVKO0FBQUNJLEtBckVRWDtBQXVFVCxlQUFlQTtBQUFJLElBQUFXO0FBQUEsYUFBQUEsSUFBQSIsIm5hbWVzIjpbIlNwYXJrbGVzIiwiUHJpY2luZ0NhcmQiLCJmcmVlUGxhbiIsInBsYW5DYXJkcyIsIkFwcCIsIm1hcCIsInBsYW4iLCJ0aXRsZSIsInByaWNlTGFiZWwiLCJkZXNjcmlwdGlvbiIsImZlYXR1cmVzIiwiY3RhTGFiZWwiLCJhY2NlbnQiLCJmZWF0dXJlZCIsImJhZGdlIiwiX2MiXSwiaWdub3JlTGlzdCI6W10sInNvdXJjZXMiOlsiQXBwLnRzeCJdLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgeyBTcGFya2xlcyB9IGZyb20gJ2x1Y2lkZS1yZWFjdCc7XHJcbmltcG9ydCB7IFByaWNpbmdDYXJkIH0gZnJvbSAnLi9jb21wb25lbnRzL1ByaWNpbmdDYXJkJztcclxuaW1wb3J0IHsgZnJlZVBsYW4sIHBsYW5DYXJkcyB9IGZyb20gJy4vZGF0YS9wcmljaW5nJztcclxuXHJcbmZ1bmN0aW9uIEFwcCgpIHtcclxuICByZXR1cm4gKFxyXG4gICAgPGRpdiBjbGFzc05hbWU9XCJtaW4taC1zY3JlZW4gb3ZlcmZsb3ctaGlkZGVuIGJnLVtyYWRpYWwtZ3JhZGllbnQoY2lyY2xlX2F0X3RvcCxfcmdiYSgxMjMsNDcsMjQ3LDAuMTgpLF90cmFuc3BhcmVudF8zMiUpLGxpbmVhci1ncmFkaWVudCgxODBkZWcsIzAyMDYxN18wJSwjMGYxNzJhXzEwMCUpXSB0ZXh0LXNsYXRlLTEwMFwiPlxyXG4gICAgICA8ZGl2IGNsYXNzTmFtZT1cIm14LWF1dG8gZmxleCBtYXgtdy03eGwgZmxleC1jb2wgcHgtNiBweS04IHNtOnB4LTggbGc6cHgtMTBcIj5cclxuICAgICAgICA8ZGl2IGNsYXNzTmFtZT1cIm1iLTMgZmxleCBpdGVtcy1jZW50ZXIganVzdGlmeS1zdGFydFwiPlxyXG4gICAgICAgICAgPGltZyBzcmM9XCIvbG9nby5wbmdcIiBhbHQ9XCJMb2dvXCIgY2xhc3NOYW1lPVwiaC0yMCB3LWF1dG9cIiAvPlxyXG4gICAgICAgIDwvZGl2PlxyXG5cclxuICAgICAgICA8c2VjdGlvbiBjbGFzc05hbWU9XCJmYWRlLWluLXN0YWdnZXIgbWItOCBzcGFjZS15LTMgdGV4dC1jZW50ZXIgbWQ6bWItMTBcIj5cclxuICAgICAgICAgIDxkaXYgY2xhc3NOYW1lPVwibXgtYXV0byBtYXgtdy0zeGwgcm91bmRlZC1bMnJlbV0gYm9yZGVyIGJvcmRlci13aGl0ZS8xMCBiZy1zbGF0ZS05NTAvODUgcHgtNyBweS03IHNoYWRvdy1zb2Z0IGJhY2tkcm9wLWJsdXIteGwgc206cHgtMTBcIj5cclxuICAgICAgICAgICAgPHAgY2xhc3NOYW1lPVwiaW5saW5lLWZsZXggaXRlbXMtY2VudGVyIGdhcC0yIHJvdW5kZWQtZnVsbCBiZy12aW9sZXQtNTAwLzEwIHB4LTQgcHktMiB0ZXh0LXhzIHVwcGVyY2FzZSB0cmFja2luZy1bMC4zZW1dIHRleHQtdmlvbGV0LTIwMFwiPlxyXG4gICAgICAgICAgICAgIDxTcGFya2xlcyBjbGFzc05hbWU9XCJoLTQgdy00IHRleHQtdmlvbGV0LTMwMFwiIC8+XHJcbiAgICAgICAgICAgICAgTW9zdCBmbGV4aWJsZSBwcmljaW5nXHJcbiAgICAgICAgICAgIDwvcD5cclxuICAgICAgICAgICAgPGgxIGNsYXNzTmFtZT1cIm10LTYgdGV4dC00eGwgZm9udC1zZW1pYm9sZCB0cmFja2luZy10aWdodCB0ZXh0LXdoaXRlIHNtOnRleHQtNXhsXCI+XHJcbiAgICAgICAgICAgICAgRmluZCB0aGUgcGxhbiBmb3IgeW91XHJcbiAgICAgICAgICAgIDwvaDE+XHJcbiAgICAgICAgICAgIDxwIGNsYXNzTmFtZT1cIm14LWF1dG8gbXQtNCBtYXgtdy14bCB0ZXh0LXNtIGxlYWRpbmctNyB0ZXh0LXNsYXRlLTMwMCBzbTp0ZXh0LWJhc2VcIj5cclxuICAgICAgICAgICAgICBZb3UgY2FuIGNhbmNlbCBhdCBhbnkgdGltZS5cclxuICAgICAgICAgICAgPC9wPlxyXG4gICAgICAgICAgPC9kaXY+XHJcbiAgICAgICAgPC9zZWN0aW9uPlxyXG5cclxuICAgICAgICA8c2VjdGlvbiBjbGFzc05hbWU9XCJncmlkIGdhcC02IHhsOmdyaWQtY29scy00IHhsOmdhcC04XCI+XHJcbiAgICAgICAgICB7cGxhbkNhcmRzLm1hcCgocGxhbikgPT4gKFxyXG4gICAgICAgICAgICA8UHJpY2luZ0NhcmRcclxuICAgICAgICAgICAgICBrZXk9e3BsYW4udGl0bGV9XHJcbiAgICAgICAgICAgICAgdGl0bGU9e3BsYW4udGl0bGV9XHJcbiAgICAgICAgICAgICAgcHJpY2VMYWJlbD17cGxhbi5wcmljZUxhYmVsfVxyXG4gICAgICAgICAgICAgIGRlc2NyaXB0aW9uPXtwbGFuLmRlc2NyaXB0aW9ufVxyXG4gICAgICAgICAgICAgIGZlYXR1cmVzPXtwbGFuLmZlYXR1cmVzfVxyXG4gICAgICAgICAgICAgIGN0YUxhYmVsPXtwbGFuLmN0YUxhYmVsfVxyXG4gICAgICAgICAgICAgIGFjY2VudD17cGxhbi5hY2NlbnR9XHJcbiAgICAgICAgICAgICAgZmVhdHVyZWQ9e3BsYW4uZmVhdHVyZWR9XHJcbiAgICAgICAgICAgICAgYmFkZ2U9e3BsYW4uYmFkZ2V9XHJcbiAgICAgICAgICAgICAgY2xhc3NOYW1lPXtwbGFuLmZlYXR1cmVkID8gJ3hsOmNvbC1zcGFuLTInIDogJyd9XHJcbiAgICAgICAgICAgICAgZXh0cmFDb250ZW50PXtcclxuICAgICAgICAgICAgICAgIHBsYW4udGl0bGUgPT09ICdQcmVtaXVtIFBsYW4nID8gKFxyXG4gICAgICAgICAgICAgICAgICA8ZGl2IGNsYXNzTmFtZT1cIm10LTYgcm91bmRlZC0zeGwgYm9yZGVyIGJvcmRlci12aW9sZXQtNTAwLzIwIGJnLXNsYXRlLTk1MC84MCBwLTQgdGV4dC1zbSB0ZXh0LXNsYXRlLTIwMFwiPlxyXG4gICAgICAgICAgICAgICAgICAgIDxwIGNsYXNzTmFtZT1cImZvbnQtc2VtaWJvbGQgdGV4dC1zbGF0ZS0xMDBcIj5QcmVtaXVtIGJvbnVzPC9wPlxyXG4gICAgICAgICAgICAgICAgICAgIDxwIGNsYXNzTmFtZT1cIm10LTIgdGV4dC1zbGF0ZS00MDBcIj5FeHRlbmRlZCBvbmJvYXJkaW5nLCBhZHZhbmNlZCBmdW5uZWxzLCBhbmQgYSBkZWRpY2F0ZWQgYWNjb3VudCByZXZpZXcgdG8ga2VlcCB5b3VyIHByb2ZpbGUgcG9saXNoZWQuPC9wPlxyXG4gICAgICAgICAgICAgICAgICA8L2Rpdj5cclxuICAgICAgICAgICAgICAgICkgOiBudWxsXHJcbiAgICAgICAgICAgICAgfVxyXG4gICAgICAgICAgICAvPlxyXG4gICAgICAgICAgKSl9XHJcbiAgICAgICAgPC9zZWN0aW9uPlxyXG5cclxuICAgICAgICA8c2VjdGlvbiBjbGFzc05hbWU9XCJtdC0xMCByb3VuZGVkLVsycmVtXSBib3JkZXIgYm9yZGVyLXdoaXRlLzEwIGJnLXNsYXRlLTk1MC84NSBwLTYgc2hhZG93LXNvZnQgYmFja2Ryb3AtYmx1ci14bCBtZDpwLThcIj5cclxuICAgICAgICAgIDxkaXYgY2xhc3NOYW1lPVwiZmxleCBmbGV4LWNvbCBnYXAtNiBtZDpmbGV4LXJvdyBtZDppdGVtcy1jZW50ZXIgbWQ6anVzdGlmeS1iZXR3ZWVuXCI+XHJcbiAgICAgICAgICAgIDxkaXYgY2xhc3NOYW1lPVwic3BhY2UteS0zXCI+XHJcbiAgICAgICAgICAgICAgPHAgY2xhc3NOYW1lPVwidGV4dC1zbSBmb250LXNlbWlib2xkIHVwcGVyY2FzZSB0cmFja2luZy1bMC4yNGVtXSB0ZXh0LXZpb2xldC0zMDAvODBcIj5GcmVlIFBsYW48L3A+XHJcbiAgICAgICAgICAgICAgPGgyIGNsYXNzTmFtZT1cInRleHQtM3hsIGZvbnQtc2VtaWJvbGQgdHJhY2tpbmctdGlnaHQgdGV4dC13aGl0ZSBzbTp0ZXh0LTR4bFwiPk5vIGNvbW1pdG1lbnQsIGp1c3QgdGhlIGVzc2VudGlhbHMuPC9oMj5cclxuICAgICAgICAgICAgICA8cCBjbGFzc05hbWU9XCJtYXgtdy0yeGwgdGV4dC1zbSBsZWFkaW5nLTcgdGV4dC1zbGF0ZS00MDBcIj5cclxuICAgICAgICAgICAgICAgIFBlcmZlY3QgZm9yIHRlc3RpbmcgdGhlIGV4cGVyaWVuY2UgYmVmb3JlIHVwZ3JhZGluZyBvciBzaGFyaW5nIGEgc2ltcGxlIGxhbmRpbmcgcGFnZSB3aXRoIHlvdXIgYXVkaWVuY2UuXHJcbiAgICAgICAgICAgICAgPC9wPlxyXG4gICAgICAgICAgICA8L2Rpdj5cclxuXHJcbiAgICAgICAgICAgIDxkaXYgY2xhc3NOYW1lPVwiZmxleCBmbGV4LWNvbCBnYXAtMyBzbTpmbGV4LXJvdyBzbTppdGVtcy1jZW50ZXJcIj5cclxuICAgICAgICAgICAgICA8YnV0dG9uIGNsYXNzTmFtZT1cImlubGluZS1mbGV4IGl0ZW1zLWNlbnRlciBqdXN0aWZ5LWNlbnRlciByb3VuZGVkLTJ4bCBiZy13aGl0ZS8xMCBweC02IHB5LTMgdGV4dC1zbSBmb250LXNlbWlib2xkIHRleHQtc2xhdGUtMTAwIHRyYW5zaXRpb24gZHVyYXRpb24tMzAwIGhvdmVyOmJnLXdoaXRlLzIwIG1kOnN0aWNreSBtZDpib3R0b20tNiBtZDp6LTIwXCI+XHJcbiAgICAgICAgICAgICAgICB7ZnJlZVBsYW4uY3RhTGFiZWx9XHJcbiAgICAgICAgICAgICAgPC9idXR0b24+XHJcbiAgICAgICAgICAgICAgPHAgY2xhc3NOYW1lPVwidGV4dC1zbSB0ZXh0LXNsYXRlLTUwMFwiPkFjY2VzcyBhbmFseXRpY3MsIGN1c3RvbSBjb2xvcnMsIGFuZCBmdWxsIHN1cHBvcnQgd2hlbiB5b3UgdXBncmFkZS48L3A+XHJcbiAgICAgICAgICAgIDwvZGl2PlxyXG4gICAgICAgICAgPC9kaXY+XHJcbiAgICAgICAgPC9zZWN0aW9uPlxyXG4gICAgICA8L2Rpdj5cclxuICAgIDwvZGl2PlxyXG4gICk7XHJcbn1cclxuXHJcbmV4cG9ydCBkZWZhdWx0IEFwcDtcclxuIl0sImZpbGUiOiJDOi9Vc2Vycy9qb3NodS8udnNjb2RlL3ByaWNpbmcvc3JjL0FwcC50c3gifQ==
