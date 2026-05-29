@@ -1,9 +1,4 @@
-// Environment-aware configuration
-const CONFIG = {
-  pricingUrl: typeof process !== 'undefined' && process.env?.NODE_ENV === 'production'
-    ? '/pricing/'
-    : 'http://localhost:4174/'
-};
+const pricingUrl = '/pricing/';
 
 const inputs = document.querySelectorAll(".code-inputs input");
 const button = document.querySelector(".submit-btn");
@@ -55,7 +50,7 @@ function checkAndSubmit() {
 
   if (code === CORRECT_CODE) {
     // ✅ Auto verify and redirect immediately (no button needed)
-    window.location.href = CONFIG.pricingUrl;
+    window.location.href = pricingUrl;
   } else {
     triggerError();
   }
