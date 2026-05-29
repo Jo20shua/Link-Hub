@@ -1,0 +1,22 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "pricing/package.json",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "pricing/dist"
+      }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/pricing/?$",
+      "dest": "/pricing/dist/index.html"
+    },
+    {
+      "src": "/pricing/(.*)",
+      "dest": "/pricing/dist/$1"
+    }
+  ]
+}
