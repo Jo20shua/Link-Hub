@@ -5,7 +5,7 @@
       "src": "pricing/package.json",
       "use": "@vercel/static-build",
       "config": {
-        "distDir": "pricing/dist"
+        "distDir": "dist"
       }
     }
   ],
