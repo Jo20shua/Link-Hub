@@ -5,7 +5,7 @@
       "name": "Launch HTML in Chrome",
       "type": "pwa-chrome",
       "request": "launch",
-      "file": "${workspaceFolder}/Homepage.html"
+      "file": "${workspaceFolder}/index.html"
     }
   ]
 }
