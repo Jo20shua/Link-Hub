@@ -1,0 +1,8 @@
+{
+  "name": "creator-link-hub-root",
+  "private": true,
+  "scripts": {
+    "build": "npm --prefix pricing ci && npm --prefix pricing run build",
+    "vercel-build": "npm run build"
+  }
+}
