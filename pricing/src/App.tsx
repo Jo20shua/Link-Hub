@@ -34,6 +34,7 @@ function App() {
               description={plan.description}
               features={plan.features}
               ctaLabel={plan.ctaLabel}
+              href={plan.href}
               accent={plan.accent}
               featured={plan.featured}
               badge={plan.badge}
