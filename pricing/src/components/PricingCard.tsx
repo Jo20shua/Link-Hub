@@ -8,6 +8,7 @@ type PricingCardProps = {
   description: string;
   features: string[];
   ctaLabel: string;
+  href?: string;
   accent?: boolean;
   featured?: boolean;
   badge?: string;
@@ -21,6 +22,7 @@ export function PricingCard({
   description,
   features,
   ctaLabel,
+  href,
   accent = false,
   featured = false,
   badge,
@@ -65,18 +67,33 @@ export function PricingCard({
       {extraContent}
 
       <div className="mt-6 flex w-full items-center justify-between gap-4 md:mt-8">
-        <button
-          type="button"
-          className={`group inline-flex w-full items-center justify-center rounded-2xl px-5 py-3 text-sm font-semibold transition duration-300 ${
-            featured
-              ? 'bg-gradient-to-r from-violet-500 to-fuchsia-500 text-white shadow-lg shadow-violet-500/20 hover:-translate-y-0.5 hover:shadow-violet-500/35'
-              : accent
-              ? 'border border-violet-400/20 bg-violet-600/10 text-violet-100 shadow-sm shadow-violet-500/10 hover:bg-violet-500/10'
-              : 'border border-slate-700/80 bg-slate-950/95 text-slate-100 hover:border-violet-400/40 hover:bg-slate-900'
-          }`}
-        >
-          {ctaLabel}
-        </button>
+        {href ? (
+          <a
+            href={href}
+            className={`group inline-flex w-full items-center justify-center rounded-2xl px-5 py-3 text-sm font-semibold transition duration-300 ${
+              featured
+                ? 'bg-gradient-to-r from-violet-500 to-fuchsia-500 text-white shadow-lg shadow-violet-500/20 hover:-translate-y-0.5 hover:shadow-violet-500/35'
+                : accent
+                ? 'border border-violet-400/20 bg-violet-600/10 text-violet-100 shadow-sm shadow-violet-500/10 hover:bg-violet-500/10'
+                : 'border border-slate-700/80 bg-slate-950/95 text-slate-100 hover:border-violet-400/40 hover:bg-slate-900'
+            }`}
+          >
+            {ctaLabel}
+          </a>
+        ) : (
+          <button
+            type="button"
+            className={`group inline-flex w-full items-center justify-center rounded-2xl px-5 py-3 text-sm font-semibold transition duration-300 ${
+              featured
+                ? 'bg-gradient-to-r from-violet-500 to-fuchsia-500 text-white shadow-lg shadow-violet-500/20 hover:-translate-y-0.5 hover:shadow-violet-500/35'
+                : accent
+                ? 'border border-violet-400/20 bg-violet-600/10 text-violet-100 shadow-sm shadow-violet-500/10 hover:bg-violet-500/10'
+                : 'border border-slate-700/80 bg-slate-950/95 text-slate-100 hover:border-violet-400/40 hover:bg-slate-900'
+            }`}
+          >
+            {ctaLabel}
+          </button>
+        )}
       </div>
     </article>
   );

@@ -4,6 +4,7 @@ export type PricingPlan = {
   description: string;
   features: string[];
   ctaLabel: string;
+  href?: string;
   accent?: boolean;
   featured?: boolean;
   badge?: string;
@@ -16,6 +17,7 @@ export const planCards: PricingPlan[] = [
     description: 'A clean entry point for your first link collection and audience growth.',
     features: ['One link page', 'Basic analytics', 'Unlimited clicks', 'Email support'],
     ctaLabel: 'Choose starter',
+    href: '/stater%20billing.html',
   },
   {
     title: 'Pro Plan',
