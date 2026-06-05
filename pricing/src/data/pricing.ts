@@ -17,7 +17,7 @@ export const planCards: PricingPlan[] = [
     description: 'A clean entry point for your first link collection and audience growth.',
     features: ['One link page', 'Basic analytics', 'Unlimited clicks', 'Email support'],
     ctaLabel: 'Choose starter',
-    href: '/stater%20billing.html',
+    href: '/stater_billing.html',
   },
   {
     title: 'Pro Plan',
