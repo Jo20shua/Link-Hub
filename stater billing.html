@@ -3,16 +3,229 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Billing | Creator Link Hub</title>
+    <title>Creator Link Hub - Premium Checkout</title>
+    <link rel="stylesheet" href="css/stater billing.css">
+    <script src="js/stater billing.js"></script>
 </head>
 <body>
-    <div class="page-logo">
-        <header class="site-header">
-            <div class="brand-mark">
-              <img src="assets/Hub Logo 2.png" class="logo" alt="Logo">
-            </div>
+    <!-- Background gradient overlay -->
+    <div class="background-gradient"></div>
+
+    <!-- Main container -->
+    <div class="checkout-container">
+        <!-- Header -->
+        <header class="checkout-header">
+            <h1 class="header-title">Upgrade to Premium</h1>
+            <p class="header-subtitle">Unlock powerful features to grow your audience</p>
         </header>
+
+        <!-- Main content wrapper -->
+        <div class="checkout-content">
+            <!-- Left section: Billing options and payment -->
+            <div class="checkout-main">
+                <!-- Billing frequency section -->
+                <section class="billing-section">
+                    <h2 class="section-title">Choose Your Plan</h2>
+                    
+                    <div class="billing-cards-container">
+                        <!-- Annual billing card (default selected) -->
+                        <div class="billing-card active" data-billing-type="annual" data-monthly-price="6" data-yearly-total="72" data-savings="25">
+                            <div class="card-header">
+                                <div class="card-badge-group">
+                                    <span class="badge badge-best-value">Best Value</span>
+                                    <span class="badge badge-savings">Save 33%</span>
+                                </div>
+                            </div>
+                            <div class="card-price">
+                                <span class="price-amount">$8</span>
+                                <span class="price-period">/month</span>
+                            </div>
+                            <div class="card-billing-info">Billed annually</div>
+                            <div class="card-total">
+                                <span class="total-label">Total billed today:</span>
+                                <span class="total-amount">$96/year</span>
+                            </div>
+                            <div class="card-savings-message">
+                                <span class="savings-icon">✓</span>
+                                <span>Save 33% compared to monthly billing</span>
+                            </div>
+                        </div>
+
+                        <!-- Monthly billing card -->
+                        <div class="billing-card" data-billing-type="monthly" data-monthly-price="12" data-yearly-total="12" data-savings="0">
+                            <div class="card-header">
+                                <div class="card-badge-group"></div>
+                            </div>
+                            <div class="card-price">
+                                <span class="price-amount">$12</span>
+                                <span class="price-period">/month</span>
+                            </div>
+                            <div class="card-billing-info">Billed monthly</div>
+                            <div class="card-total">
+                                <span class="total-label">Total billed today:</span>
+                                <span class="total-amount">$12/month</span>
+                            </div>
+                            <div class="card-savings-message" style="display: none;">
+                                <span class="savings-icon">✓</span>
+                                <span>Save 0% compared to monthly billing</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Payment method tabs -->
+                <section class="payment-section">
+                    <h2 class="section-title">Payment Method</h2>
+                    
+                    <!-- Tab navigation -->
+                    <div class="payment-tabs">
+                        <button class="payment-tab active" data-tab="card">
+                            <span class="tab-icon">💳</span>
+                            <span class="tab-text">Card</span>
+                        </button>
+                        <button class="payment-tab" data-tab="bank">
+                            <span class="tab-icon">🏦</span>
+                            <span class="tab-text">Bank Transfer</span>
+                        </button>
+                    </div>
+
+                    <!-- Card payment tab -->
+                    <div class="payment-tab-content active" id="card-tab">
+                        <div class="card-logos">
+                           <div class="card-logo">
+                              <svg viewBox="0 0 100 32" xmlns="http://www.w3.org/2000/svg">
+                                  <text x="9" y="24"
+                                        font-size="32"
+                                        font-weight="1000"
+                                        font-family="Arial, sans-serif"
+                                        fill="#1A1F71">
+                                         VISA
+                                    </text>
+                                </svg>
+                           </div>
+                           <div class="card-logo">
+                                <svg viewBox="0 0 60 32" xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="38" cy="16" r="10" fill="#F79E1B"/>
+                                    <circle cx="22" cy="16" r="10" fill="#EB001B" opacity="0.7"/>
+                                </svg>
+                           </div>
+                        </div>
+
+                        <form class="card-form" id="card-form">
+                            <div class="form-group">
+                                <label for="cardholder-name" class="form-label">Cardholder Name</label>
+                                <input 
+                                    type="text" 
+                                    id="cardholder-name" 
+                                    class="form-input" 
+                                    placeholder="John Doe"
+                                    data-field="cardholder-name"
+                                    required
+                                >
+                            </div>
+
+                            <div class="form-group">
+                                <label for="card-number" class="form-label">Card Number</label>
+                                <input 
+                                    type="text" 
+                                    id="card-number" 
+                                    class="form-input" 
+                                    placeholder="4532 1488 0343 6467"
+                                    data-field="card-number"
+                                    maxlength="19"
+                                    required
+                                >
+                                <div class="card-number-hint">16 digits</div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="expiry-date" class="form-label">Expiry Date</label>
+                                    <input 
+                                        type="text" 
+                                        id="expiry-date" 
+                                        class="form-input" 
+                                        placeholder="MM/YY"
+                                        data-field="expiry-date"
+                                        maxlength="5"
+                                        required
+                                    >
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="cvv" class="form-label">CVV</label>
+                                    <input 
+                                        type="text" 
+                                        id="cvv" 
+                                        class="form-input" 
+                                        placeholder="000"
+                                        data-field="cvv"
+                                        maxlength="4"
+                                        required
+                                    >
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- Bank transfer tab -->
+                    <div class="payment-tab-content" id="bank-tab">
+                        <form class="bank-form" id="bank-form">
+                            <div class="form-group">
+                                <label for="bank-select" class="form-label">Select Bank</label>
+                                <select id="bank-select" class="form-input form-select" required>
+                                    <option value="">Choose your bank</option>
+                                </select>
+                            </div>
+                        </form>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Right section: Order summary -->
+            <aside class="checkout-sidebar">
+                <div class="summary-card">
+                    <h3 class="summary-title">Your Plan</h3>
+                    
+                    <div class="summary-item">
+                        <span class="summary-label">Plan Name</span>
+                        <span class="summary-value">Creator Link Hub Premium</span>
+                    </div>
+
+                    <div class="summary-divider"></div>
+
+                    <div class="summary-item">
+                        <span class="summary-label">Price</span>
+                        <span class="summary-value" id="summary-price">$8<span class="summary-period">/month</span></span>
+                    </div>
+
+                    <div class="summary-item">
+                        <span class="summary-label">Billing Frequency</span>
+                        <span class="summary-value" id="summary-frequency">Annually</span>
+                    </div>
+
+                    <div id="summary-savings-container" class="summary-savings-container">
+                        <div class="summary-divider"></div>
+                    </div>
+
+                    <div class="summary-divider"></div>
+
+                    <div class="summary-total">
+                        <span class="summary-total-label">Total Today</span>
+                        <span class="summary-total-amount" id="summary-total">$96</span>
+                    </div>
+
+                    <button class="cta-button" id="checkout-button" data-billing-type="annual">
+                        Start Free Trial - Annual Plan
+                    </button>
+
+                    <p class="summary-notice">
+                        No credit card required for the free trial. Your trial includes full access to all premium features for 7 days.
+                    </p>
+                </div>
+            </aside>
+        </div>
     </div>
-    
+
 </body>
 </html>
