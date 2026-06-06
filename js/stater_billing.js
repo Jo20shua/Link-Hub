@@ -8,22 +8,13 @@
  */
 const CheckoutState = {
     selectedBillingType: 'annual',
-    selectedPaymentMethod: 'card',
     
     setBillingType(type) {
         this.selectedBillingType = type;
     },
     
-    setPaymentMethod(method) {
-        this.selectedPaymentMethod = method;
-    },
-    
     getBillingType() {
         return this.selectedBillingType;
-    },
-    
-    getPaymentMethod() {
-        return this.selectedPaymentMethod;
     }
 };
 
@@ -35,14 +26,6 @@ const DOM = {
     // Billing cards
     billingCards: document.querySelectorAll('.billing-card'),
     
-    // Payment tabs
-    paymentTabs: document.querySelectorAll('.payment-tab'),
-    paymentTabContents: document.querySelectorAll('.payment-tab-content'),
-    
-    // Form inputs
-    cardInputs: document.querySelectorAll('.card-form .form-input'),
-    bankInputs: document.querySelectorAll('.bank-form .form-input'),
-    
     // Summary elements
     summaryPrice: document.getElementById('summary-price'),
     summaryFrequency: document.getElementById('summary-frequency'),
@@ -50,11 +33,7 @@ const DOM = {
     summarySavingsContainer: document.getElementById('summary-savings-container'),
     
     // CTA Button
-    ctaButton: document.getElementById('checkout-button'),
-    
-    // Forms
-    cardForm: document.getElementById('card-form'),
-    bankForm: document.getElementById('bank-form')
+    ctaButton: document.getElementById('checkout-button')
 };
 
 /**
@@ -65,16 +44,6 @@ function initializeEventListeners() {
     DOM.billingCards.forEach(card => {
         card.addEventListener('click', handleBillingCardClick);
     });
-    
-    // Payment tab switching
-    DOM.paymentTabs.forEach(tab => {
-        tab.addEventListener('click', handlePaymentTabClick);
-    });
-    
-    // Form input formatting
-    document.getElementById('card-number')?.addEventListener('input', formatCardNumber);
-    document.getElementById('expiry-date')?.addEventListener('input', formatExpiryDate);
-    document.getElementById('cvv')?.addEventListener('input', formatCVV);
     
     // CTA Button click
     DOM.ctaButton?.addEventListener('click', handleCheckoutClick);
@@ -173,35 +142,6 @@ function updateCtaButton() {
 }
 
 /**
- * Handle Payment Tab Switching
- * @param {Event} event - Click event
- */
-function handlePaymentTabClick(event) {
-    const clickedTab = event.currentTarget;
-    const tabName = clickedTab.dataset.tab;
-    
-    // Update state
-    CheckoutState.setPaymentMethod(tabName);
-    
-    // Remove active class from all tabs and contents
-    DOM.paymentTabs.forEach(tab => {
-        tab.classList.remove('active');
-    });
-    DOM.paymentTabContents.forEach(content => {
-        content.classList.remove('active');
-    });
-    
-    // Add active class to clicked tab
-    clickedTab.classList.add('active');
-    
-    // Show corresponding content
-    const activeContent = document.getElementById(`${tabName}-tab`);
-    if (activeContent) {
-        activeContent.classList.add('active');
-    }
-}
-
-/**
  * Format Card Number Input
  * Spaces every 4 digits
  * @param {Event} event - Input event
@@ -252,13 +192,6 @@ function handleCheckoutClick(event) {
     event.preventDefault();
     
     const billingType = CheckoutState.getBillingType();
-    const paymentMethod = CheckoutState.getPaymentMethod();
-    
-    // Validate form based on payment method
-    if (!validateForm(paymentMethod)) {
-        showNotification('Please fill in all required fields', 'error');
-        return;
-    }
     
     // Show loading state
     showCheckoutLoading();
@@ -267,58 +200,16 @@ function handleCheckoutClick(event) {
     setTimeout(() => {
         hideCheckoutLoading();
         showNotification(
-            `Checkout initiated: ${billingType} billing via ${paymentMethod}`,
+            `Checkout initiated: ${billingType} billing`,
             'success'
         );
         
         // In production, you would redirect or show a success screen
         console.log({
             billingType,
-            paymentMethod,
             timestamp: new Date().toISOString()
         });
     }, 1500);
-}
-
-/**
- * Validate Form Based on Payment Method
- * @param {string} paymentMethod - Payment method to validate
- * @returns {boolean} - Is valid
- */
-function validateForm(paymentMethod) {
-    if (paymentMethod === 'card') {
-        return validateCardForm();
-    } else if (paymentMethod === 'bank') {
-        return validateBankForm();
-    }
-    return false;
-}
-
-/**
- * Validate Card Form
- * @returns {boolean} - Is valid
- */
-function validateCardForm() {
-    const cardholderName = document.getElementById('cardholder-name');
-    const cardNumber = document.getElementById('card-number');
-    const expiryDate = document.getElementById('expiry-date');
-    const cvv = document.getElementById('cvv');
-    
-    return (
-        cardholderName?.value.trim().length > 0 &&
-        cardNumber?.value.replace(/\s/g, '').length === 16 &&
-        expiryDate?.value.match(/^\d{2}\/\d{2}$/) &&
-        cvv?.value.match(/^\d{3,4}$/)
-    );
-}
-
-/**
- * Validate Bank Form
- * @returns {boolean} - Is valid
- */
-function validateBankForm() {
-    const bankSelect = document.getElementById('bank-select');
-    return bankSelect?.value !== '';
 }
 
 /**
@@ -455,99 +346,4 @@ if (document.readyState === 'loading') {
     initializePage();
 }
 
-/* ============================================
-   UTILITY FUNCTIONS FOR FUTURE ENHANCEMENTS
-   ============================================ */
 
-/**
- * Get current checkout data
- * Useful for debugging or API calls
- * @returns {object} - Current checkout state and form data
- */
-function getCheckoutData() {
-    const activeCard = document.querySelector('.billing-card.active');
-    const paymentMethod = CheckoutState.getPaymentMethod();
-    
-    const data = {
-        billingType: CheckoutState.getBillingType(),
-        monthlyPrice: activeCard?.dataset.monthlyPrice,
-        yearlyTotal: activeCard?.dataset.yearlyTotal,
-        savings: activeCard?.dataset.savings,
-        paymentMethod: paymentMethod
-    };
-    
-    // Add form data if card payment
-    if (paymentMethod === 'card') {
-        data.card = {
-            cardholder: document.getElementById('cardholder-name')?.value,
-            cardNumber: document.getElementById('card-number')?.value,
-            expiryDate: document.getElementById('expiry-date')?.value,
-            cvv: document.getElementById('cvv')?.value
-        };
-    } else if (paymentMethod === 'bank') {
-        data.bank = {
-            selectedBank: document.getElementById('bank-select')?.value
-        };
-    }
-    
-    return data;
-}
-
-/**
- * Reset form to initial state
- */
-function resetCheckoutForm() {
-    // Reset to annual billing
-    CheckoutState.setBillingType('annual');
-    const annualCard = document.querySelector('[data-billing-type="annual"]');
-    
-    DOM.billingCards.forEach(card => card.classList.remove('active'));
-    annualCard?.classList.add('active');
-    
-    // Reset to card payment
-    CheckoutState.setPaymentMethod('card');
-    DOM.paymentTabs.forEach(tab => tab.classList.remove('active'));
-    DOM.paymentTabs[0]?.classList.add('active');
-    DOM.paymentTabContents.forEach(content => content.classList.remove('active'));
-    document.getElementById('card-tab')?.classList.add('active');
-    
-    // Clear form inputs
-    document.getElementById('cardholder-name')?.setValue('');
-    document.getElementById('card-number')?.setValue('');
-    document.getElementById('expiry-date')?.setValue('');
-    document.getElementById('cvv')?.setValue('');
-    document.getElementById('bank-select')?.setValue('');
-    
-    // Update summary
-    updateSummarySection();
-    updateCtaButton();
-}
-
-/**
- * Update bank options (call this when you add banks)
- * @param {array} banks - Array of bank objects {code, name}
- */
-function updateBankOptions(banks) {
-    const bankSelect = document.getElementById('bank-select');
-    if (!bankSelect) return;
-    
-    // Keep the default option
-    bankSelect.innerHTML = '<option value="">Choose your bank</option>';
-    
-    // Add bank options
-    banks.forEach(bank => {
-        const option = document.createElement('option');
-        option.value = bank.code;
-        option.textContent = bank.name;
-        bankSelect.appendChild(option);
-    });
-}
-
-/**
- * Export checkout data (useful for logging/analytics)
- */
-window.CheckoutAPI = {
-    getState: () => getCheckoutData(),
-    reset: () => resetCheckoutForm(),
-    updateBanks: (banks) => updateBankOptions(banks)
-};
