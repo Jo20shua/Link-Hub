@@ -17,36 +17,45 @@
 <body>
   <div class="page-shell">
       <header class="site-header">
-          <div class="brand-row">
-            <div class="brand-mark">
-              <img src="assets/Hub Logo 2.png" class="logo" alt="Logo">
-            </div>
-            <div>
-              <p class="brand-name">Creator Link Hub</p>
-            </div>
+        <div class="brand-row">
+          <div class="brand-mark">
+            <img src="assets/Hub Logo 2.png" class="logo" alt="Logo">
           </div>
+          <div>
+            <p class="brand-name">Creator Link Hub</p>
+          </div>
+        </div>
 
-          
-         
+        <!-- Normal links (hidden on mobile) -->
         <nav class="site-nav">
-          <a href="#features">Features</a>
-          <a href="#template">Template</a>
+          <a href="#">Features</a>
+          <a href="#">Template</a>
           <a href="/pricing/">Pricing</a>
-          <a href="#learn">Learn</a>
+          <a href="#">Learn</a>
         </nav>
 
-      <div class="nav-actions">
-        <button class="ghost-btn" type="login" onclick="window.location.href='login.html'">Login</button>
-        <button class="primary-btn" type="signup"onclick="window.location.href='sign_up.html'">Sign Up</button>   
-      <div class="menu-toggle" id="menu-toggle">
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
-      </div>
-      
-      
-    </header>
+        <!-- Hamburger menu (visible only on mobile) -->
+        <div class="menu-toggle" id="menu-toggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+
+        <!-- Login and Sign Up buttons -->
+        <div class="nav-actions">
+          <button class="ghost-btn" type="login" onclick="window.location.href='login.html'">Login</button>
+          <button class="primary-btn" type="signup" onclick="window.location.href='sign_up.html'">Sign Up</button>
+        </div>   
+
+        <!-- Dropdown menu (shown when hamburger is clicked) -->
+        <div class="mobile-menu" id="mobileMenu">
+          <a href="#">Features</a>
+          <a href="#">Template</a>
+          <a href="/pricing/">Pricing</a>
+          <a href="#">Learn</a>
+        </div>
+
+      </header>
 
     <main>
        <section class="hero-section">

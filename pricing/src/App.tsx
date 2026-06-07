@@ -23,7 +23,7 @@ function App() {
               You can cancel at any time.
             </p>
           </div>
-        </section>
+        </section>           
 
         <section className="grid gap-6 xl:grid-cols-4 xl:gap-8">
           {planCards.map((plan) => (
