@@ -24,7 +24,7 @@ export const planCards: PricingPlan[] = [
     priceLabel: '$27/mo',
     description: 'Designed for active creators who want advanced insights and polish.',
     features: ['Custom branding', 'Priority support', 'Advanced analytics', 'Scheduled links'],
-    ctaLabel: 'Start pro',
+    ctaLabel: 'Try free for 7 days',
     accent: true,
     featured: true,
     badge: 'Recommended',
@@ -34,7 +34,7 @@ export const planCards: PricingPlan[] = [
     priceLabel: '$39/mo',
     description: 'A premium experience for established creators and teams.',
     features: ['Team sharing', 'Conversion funnels', 'Unlimited products', 'Dedicated onboarding'],
-    ctaLabel: 'Go premium',
+    ctaLabel: 'Try free for 7 days',
     accent: true,
   },
 ];
