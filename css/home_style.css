@@ -645,6 +645,8 @@ input::placeholder {
     font-size: 22px;
     margin-left: 5px;
     cursor: pointer;
+    width: 28px;
+    height: 20px;
   }
 
   .site-nav {
