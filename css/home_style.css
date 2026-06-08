@@ -64,14 +64,14 @@ button {
 }
 
 .menu-toggle span {
-  height: 3px;
-  width: 100%;
+  height: 20px;
+  width: 28px;
   background: white;
   transition: 0.3s;
   display: block;
 }
 
-/* Animate to X */
+/*Animate to X after opening */
 .menu-toggle.active span:nth-child(1) {
   transform: rotate(45deg) translate(5px, 5px);
 }
@@ -90,7 +90,7 @@ button {
 }
 
 /* When dropdown menu is open */
-.menu-toggle.open {
+.mobile-menu.open {
   right: 0;
   position: fixed;
   top: 0;
